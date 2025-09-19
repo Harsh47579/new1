@@ -1,0 +1,234 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Leaflet CSS */
+@import 'leaflet/dist/leaflet.css';
+
+/* Custom Leaflet Popup Styling */
+.custom-popup .leaflet-popup-content-wrapper {
+  background: #1e293b;
+  color: #f1f5f9;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #334155;
+}
+
+.custom-popup .leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+/* Map marker hover effects */
+.leaflet-marker-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Custom styles */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Leaflet map container */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900;
+}
+
+.btn-secondary {
+  @apply bg-dark-700 hover:bg-dark-600 text-dark-100 font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-dark-500 focus:ring-offset-2 focus:ring-offset-dark-900;
+}
+
+.btn-outline {
+  @apply border border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900;
+}
+
+/* Status badges */
+.status-new {
+  @apply bg-red-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-in-progress {
+  @apply bg-yellow-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-resolved {
+  @apply bg-green-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-closed {
+  @apply bg-gray-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-rejected {
+  @apply bg-red-800 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+/* Priority badges */
+.priority-low {
+  @apply bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.priority-medium {
+  @apply bg-yellow-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.priority-high {
+  @apply bg-orange-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.priority-urgent {
+  @apply bg-red-600 text-white px-2 py-1 rounded-full text-xs font-medium;
+}
+
+/* Card styles */
+.card {
+  @apply bg-dark-800 border border-dark-700 rounded-lg p-6 shadow-lg;
+}
+
+.card-hover {
+  @apply card hover:border-primary-500 transition-colors duration-200 cursor-pointer;
+}
+
+/* Input styles */
+.input {
+  @apply w-full px-3 py-2 bg-dark-700 border border-dark-600 rounded-lg text-dark-100 placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+}
+
+.textarea {
+  @apply input resize-none;
+}
+
+/* Loading animation */
+.loading-spinner {
+  @apply animate-spin rounded-full h-6 w-6 border-b-2 border-primary-500;
+}
+
+/* Fade in animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide up animation */
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Bounce in animation */
+.bounce-in {
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
